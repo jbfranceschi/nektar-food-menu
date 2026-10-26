@@ -119,15 +119,22 @@ def page_html(donnees, prefixe=""):
   <title>{e(titre)} · NEKTAR</title>
   <meta name="description" content="{e(donnees.get('description_page', titre + ' du bar à vin NEKTAR à Paris'))}">
   <link rel="preload" href="{prefixe}assets/polices/EBGaramond.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{prefixe}assets/polices/CormorantGaramond.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{prefixe}assets/carte.css">
+  <script>document.documentElement.className += " js";</script>
 </head>
 <body>
-  <main class="page">
-    <header class="entete">
-      <h1>{e(titre)}</h1>
-      <img class="logo" src="{prefixe}assets/logo-nektar.png" alt="NEKTAR, café · bar à vin" width="228" height="228">
-    </header>{sections}{note}{legende}
-  </main>
+  <div class="ecran">
+    <main class="feuille" id="feuille">
+      <header class="entete">
+        <h1>{e(titre)}</h1>
+        <img class="logo" src="{prefixe}assets/logo-nektar.svg" alt="NEKTAR, café · bar à vin">
+      </header>
+      <div class="contenu" id="contenu">{sections}{note}
+      </div>{legende}
+    </main>
+  </div>
+  <script src="{prefixe}assets/ajuster.js"></script>
 </body>
 </html>
 """

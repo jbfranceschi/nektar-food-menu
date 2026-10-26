@@ -1,148 +1,182 @@
-/* Carte NEKTAR — feuille de style commune (menu + vins au verre) */
+/* Carte NEKTAR — feuille A4 unique (menu + vins au verre)
+   La feuille est dessinée à taille fixe (1050 × 1484 px = proportions A4).
+   - à l'écran : elle est agrandie/réduite pour remplir la largeur (zoom = net) ;
+   - à l'impression : elle fait exactement une page A4 ;
+   - --s (taille du texte) et --pad (espacement) sont calculés par ajuster.js
+     pour que tout tienne toujours sur la page, quel que soit le nombre d'articles. */
 
 @font-face {
   font-family: "EB Garamond";
   src: url("polices/EBGaramond.woff2") format("woff2");
   font-weight: 400 800;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
   font-family: "Cormorant Garamond";
   src: url("polices/CormorantGaramond.woff2") format("woff2");
   font-weight: 300 700;
-  font-display: swap;
+  font-display: block;
 }
 
 :root {
   --fond: #001223;
-  --fond-clair: #032039;
+  --fond-clair: #03203a;
   --or: #ffcd45;
   --or-trait: #e4a31c;
   --texte: #f6f3ee;
-  --texte-doux: #cfd4dc;
-  --largeur: 1000px;
 }
 
 * { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
-html { -webkit-text-size-adjust: 100%; }
-
-body {
+html, body {
   margin: 0;
-  min-height: 100vh;
-  background:
-    radial-gradient(ellipse at 50% 35%, var(--fond-clair) 0%, var(--fond) 70%) fixed,
-    var(--fond);
-  color: var(--texte);
-  font-family: "EB Garamond", Garamond, "Times New Roman", serif;
-  font-size: clamp(16px, 2vw, 20px);
-  line-height: 1.4;
-  padding: clamp(10px, 2.5vw, 24px);
-  padding-bottom: max(clamp(10px, 2.5vw, 24px), env(safe-area-inset-bottom));
+  background: var(--fond);
 }
 
-.page {
-  max-width: var(--largeur);
-  margin: 0 auto;
-  border: 1.5px solid var(--or-trait);
-  padding: clamp(22px, 5vw, 48px) clamp(18px, 5.5vw, 60px) clamp(28px, 5vw, 52px);
+/* ---------- Écran : la feuille remplit la largeur, centrée ---------- */
+.ecran {
+  display: flex;
+  justify-content: center;
+  padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+}
+
+.feuille {
+  --s: 1;          /* échelle du texte, ajustée par ajuster.js */
+  --pad: 0px;      /* espace ajouté entre les articles, ajusté par ajuster.js */
+  --z: 1;          /* zoom d'affichage, ajusté par ajuster.js */
+  zoom: var(--z);
+  position: relative;
+  flex: none;
+  width: 1050px;
+  height: 1484px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 62px 52px;
+  background: radial-gradient(ellipse 80% 60% at 50% 42%, var(--fond-clair) 0%, var(--fond) 100%);
+  color: var(--texte);
+  font-family: "EB Garamond", Garamond, "Times New Roman", serif;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+  transition: opacity .2s;
+}
+/* masquée le temps du calcul (seulement si JavaScript est actif) */
+.js .feuille:not(.prete) { opacity: 0; }
+
+/* cadre doré */
+.feuille::before {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border: 2px solid var(--or-trait);
+  pointer-events: none;
 }
 
 /* ---------- En-tête ---------- */
 .entete {
   position: relative;
+  flex: none;
   text-align: center;
-  margin-bottom: clamp(14px, 3vw, 28px);
+  height: 118px;
 }
 .entete h1 {
-  margin: 0;
+  margin: 8px 0 0;
   font-family: "Cormorant Garamond", "EB Garamond", serif;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  margin-right: -.14em; /* recentre malgré l'espacement */
-  font-size: clamp(46px, 9vw, 82px);
+  font-size: 80px;
   line-height: 1;
+  letter-spacing: .15em;
+  margin-right: -.15em;
+  text-transform: uppercase;
   color: var(--or);
 }
 .entete h1::after {
   content: "";
   display: block;
-  width: 56px;
-  height: 2px;
-  margin: clamp(10px, 2vw, 18px) auto 0;
+  width: 58px;
+  height: 2.5px;
+  margin: 18px auto 0;
   background: var(--or-trait);
 }
 .logo {
   position: absolute;
-  top: calc(-1 * clamp(4px, 1.5vw, 14px));
-  right: calc(-1 * clamp(0px, 1.5vw, 14px));
-  width: clamp(64px, 11vw, 110px);
-  height: auto;
+  top: -10px;
+  right: -14px;
+  width: 112px;
+  height: 112px;
 }
 
-/* ---------- Sections (ex. Blancs / Rouges pour les vins) ---------- */
+/* ---------- Zone des articles : prend toute la hauteur disponible ---------- */
+.contenu {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
 .section {
-  margin: clamp(22px, 4vw, 36px) 0 4px;
+  margin: calc(var(--s) * 18px + var(--pad)) 0 calc(var(--s) * 2px);
   text-align: center;
   font-weight: 500;
-  font-size: .82em;
+  font-size: calc(var(--s) * 19px);
   text-transform: uppercase;
-  letter-spacing: .28em;
+  letter-spacing: .3em;
+  margin-right: -.3em;
   color: var(--or);
 }
 
-/* ---------- Articles ---------- */
 .articles { list-style: none; margin: 0; padding: 0; }
 
 .article {
-  padding: clamp(12px, 2vw, 17px) 0 clamp(13px, 2vw, 18px);
-  border-bottom: 1.5px solid var(--or-trait);
+  padding: calc(var(--s) * 13px + var(--pad)) 0 calc(var(--s) * 14px + var(--pad));
+  border-bottom: 2px solid var(--or-trait);
 }
 .article:last-child { border-bottom: 0; }
 
 .ligne {
   display: flex;
   align-items: baseline;
-  gap: 16px;
+  gap: 24px;
 }
 .nom {
-  flex: 1;
+  flex: 1 1 auto;
   margin: 0;
+  white-space: nowrap;       /* nom + allergènes toujours sur UNE ligne */
   font-weight: 500;
-  font-size: clamp(22px, 3.1vw, 31px);
+  font-size: calc(var(--s) * 32px);
   line-height: 1.15;
   color: var(--or);
 }
 .prix {
   flex: none;
+  white-space: nowrap;
   font-weight: 500;
-  font-size: clamp(21px, 3vw, 30px);
+  font-size: calc(var(--s) * 31px);
   line-height: 1.15;
   color: var(--or);
-  white-space: nowrap;
   font-variant-numeric: lining-nums;
 }
-.prix .sep { margin: 0 .18em; }
+.prix .sep { margin: 0 .2em; }
 
 .desc {
-  margin: .35em 0 0;
-  max-width: 80%;
+  margin: calc(var(--s) * 6px) 0 0;
+  max-width: 79%;
+  font-size: calc(var(--s) * 21px);
+  line-height: 1.32;
+  letter-spacing: .012em;
   color: var(--texte);
-  letter-spacing: .01em;
 }
 
 /* ---------- Icônes allergènes ---------- */
 .icos {
   display: inline-flex;
-  white-space: nowrap;
-  gap: .45em;
-  margin-left: .55em;
-  vertical-align: -0.08em;
+  gap: .5em;
+  margin-left: .6em;
+  vertical-align: -.1em;
 }
 .ico svg {
   display: block;
-  height: 1em;
+  height: .95em;
   width: auto;
   fill: none;
   stroke: var(--or);
@@ -151,74 +185,64 @@ body {
   stroke-linejoin: round;
 }
 .ico svg .plein { fill: var(--or); stroke: none; }
-.ico svg text {
-  fill: var(--or);
-  stroke: none;
-  font: 600 11px "EB Garamond", serif;
-}
-.icos .ico svg { height: .95em; }
+.ico svg text { fill: var(--or); stroke: none; font: 600 11px "EB Garamond", serif; }
 
-/* ---------- Note libre ---------- */
 .note {
-  margin: 18px 0 0;
+  margin: calc(var(--s) * 14px) 0 0;
   text-align: center;
   font-style: italic;
-  color: var(--texte-doux);
+  font-size: calc(var(--s) * 19px);
 }
 
-/* ---------- Légende ---------- */
-.legende { margin-top: clamp(26px, 4.5vw, 44px); }
+/* ---------- Légende (toujours sur une ligne, en bas) ---------- */
+.legende {
+  flex: none;
+  margin-top: 22px;
+  --l: 1;          /* échelle de la légende, ajustée si beaucoup d'allergènes */
+}
 .legende h2 {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin: 0 0 clamp(14px, 2.5vw, 24px);
+  gap: 18px;
+  margin: 0 0 22px;
   font-weight: 500;
-  font-size: .9em;
-  letter-spacing: .3em;
+  font-size: 21px;
+  letter-spacing: .32em;
   text-transform: uppercase;
   color: var(--or);
 }
-.legende h2::before,
-.legende h2::after {
-  content: "";
-  flex: 1;
-  height: 1.5px;
-  background: var(--or-trait);
+.legende h2::before, .legende h2::after {
+  content: ""; flex: 1; height: 2px; background: var(--or-trait);
 }
-.legende h2 span { margin-right: -.3em; }
+.legende h2 span { margin-right: -.32em; }
 .legende ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-around;
-  gap: 14px 10px;
+  gap: calc(var(--l) * 14px);
 }
 .legende li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  min-width: 72px;
-  font-size: clamp(16px, 2.1vw, 21px);
-  color: var(--texte);
+  gap: calc(var(--l) * 8px);
+  white-space: nowrap;
+  font-size: calc(var(--l) * 22px);
 }
-.legende .ico svg { height: clamp(32px, 4.6vw, 46px); stroke-width: 1.3; }
+.legende .ico svg { height: calc(var(--l) * 48px); stroke-width: 1.3; }
 
-/* ---------- Mobile ---------- */
-@media (max-width: 600px) {
-  .ligne { gap: 10px; }
-  .desc { max-width: none; }
-  .icos { margin-left: .4em; gap: .35em; }
-  .legende ul { gap: 12px 4px; }
-  .legende li { min-width: 54px; font-size: 15px; }
-}
-
-/* ---------- Impression / PDF ---------- */
+/* ---------- Impression : exactement une page A4 ---------- */
+@page { size: A4; margin: 0; }
 @media print {
-  @page { size: A4; margin: 0; }
-  body { padding: 8mm; background: var(--fond); -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 15px; }
-  .page { min-height: calc(297mm - 16mm); }
+  html, body { background: var(--fond); }
+  .ecran { display: block; padding: 0; }
+  .feuille {
+    zoom: .75590551 !important;   /* 1050 px -> 210 mm */
+    opacity: 1 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }
