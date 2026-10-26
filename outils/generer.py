@@ -115,7 +115,7 @@ def page_html(donnees, prefixe=""):
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#001223">
+  <meta name="theme-color" content="#2a3244">
   <title>{e(titre)} · NEKTAR</title>
   <meta name="description" content="{e(donnees.get('description_page', titre + ' du bar à vin NEKTAR à Paris'))}">
   <link rel="preload" href="{prefixe}assets/polices/EBGaramond.woff2" as="font" type="font/woff2" crossorigin>

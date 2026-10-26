@@ -19,8 +19,8 @@
 }
 
 :root {
-  --fond: #001223;
-  --fond-clair: #03203a;
+  --fond: #2a3244;          /* Pantone 19-4024 TCX « Dress Blues » */
+  --fond-clair: #2a3244;
   --or: #ffcd45;
   --or-trait: #e4a31c;
   --texte: #f6f3ee;
@@ -54,7 +54,7 @@ html, body {
   display: flex;
   flex-direction: column;
   padding: 50px 62px 52px;
-  background: radial-gradient(ellipse 80% 60% at 50% 42%, var(--fond-clair) 0%, var(--fond) 100%);
+  background: var(--fond);
   color: var(--texte);
   font-family: "EB Garamond", Garamond, "Times New Roman", serif;
   font-kerning: normal;
