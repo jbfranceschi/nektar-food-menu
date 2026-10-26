@@ -3,31 +3,89 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#031629">
-  <title>Menu NEKTAR</title>
+  <meta name="theme-color" content="#001223">
+  <title>Menu · NEKTAR</title>
   <meta name="description" content="Menu du bar à vin NEKTAR à Paris">
-  <style>
-    html, body {
-      margin: 0;
-      min-height: 100%;
-      background: #031629;
-    }
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      font-family: Arial, sans-serif;
-    }
-    .menu {
-      display: block;
-      width: 100%;
-      max-width: 1100px;
-      height: auto;
-      margin: 0 auto;
-    }
-  </style>
+  <link rel="preload" href="assets/polices/EBGaramond.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/carte.css">
 </head>
 <body>
-  <img class="menu" src="menu-nektar.png" alt="Menu NEKTAR">
+  <main class="page">
+    <header class="entete">
+      <h1>Menu</h1>
+      <img class="logo" src="assets/logo-nektar.png" alt="NEKTAR, café · bar à vin" width="228" height="228">
+    </header>
+    <section>
+      <ul class="articles">
+      <li class="article">
+        <div class="ligne">
+          <h3 class="nom">Crudo de la pêche du jour<span class="icos"><span class="ico" role="img" aria-label="Poisson" title="Poisson"><svg viewBox="0 0 32 24"><path d="M3 12c4-7 13-8 19 0-6 8-15 7-19 0z"/><path d="M22 12l7-6-2 6 2 6z"/><circle cx="8" cy="11" r="1.1"/><path d="M11.5 7.5q2 4.5 0 9"/></svg></span></span></h3>
+          <span class="prix">19 €</span>
+        </div>
+        <p class="desc">Poisson cru tranché minute, selon l’arrivée de criée, vinaigrette aux agrumes, poivre Sarawak et autres épices, huile verte et son condiment kumquat.</p>
+      </li>
+      <li class="article">
+        <div class="ligne">
+          <h3 class="nom">Tartare de veau, sauce tonnato<span class="icos"><span class="ico" role="img" aria-label="Moutarde" title="Moutarde"><svg viewBox="0 0 24 24"><path d="M7.5 2.5h9v3.5h-9z"/><path d="M8 6c-1 .8-1.5 1.8-1.5 3v11.5c0 .8.7 1.5 1.5 1.5h8c.8 0 1.5-.7 1.5-1.5V9c0-1.2-.5-2.2-1.5-3"/><circle cx="10.5" cy="14" r="1"/><circle cx="13.5" cy="15.8" r="1"/><circle cx="11.3" cy="17.8" r="1"/></svg></span><span class="ico" role="img" aria-label="Œufs" title="Œufs"><svg viewBox="0 0 24 24"><path d="M12 2.5c-4 0-7 7-7 12 0 4.4 3 7 7 7s7-2.6 7-7c0-5-3-12-7-12z"/></svg></span><span class="ico" role="img" aria-label="Poisson" title="Poisson"><svg viewBox="0 0 32 24"><path d="M3 12c4-7 13-8 19 0-6 8-15 7-19 0z"/><path d="M22 12l7-6-2 6 2 6z"/><circle cx="8" cy="11" r="1.1"/><path d="M11.5 7.5q2 4.5 0 9"/></svg></span><span class="ico" role="img" aria-label="Gluten" title="Gluten"><svg viewBox="0 0 24 24"><g transform="rotate(22 12 13)"><path d="M12 23V5"/><path d="M12 8.5q-3.8-.6-4.4-5 3.9.4 4.4 5zM12 8.5q3.8-.6 4.4-5-3.9.4-4.4 5zM12 13q-3.8-.6-4.4-5 3.9.4 4.4 5zM12 13q3.8-.6 4.4-5-3.9.4-4.4 5zM12 17.5q-3.8-.6-4.4-5 3.9.4 4.4 5zM12 17.5q3.8-.6 4.4-5-3.9.4-4.4 5zM12 5q-1.6-2 0-4.3 1.6 2.3 0 4.3z"/></g></svg></span></span></h3>
+          <span class="prix">17 €</span>
+        </div>
+        <p class="desc">Veau de la Maison Lesage, taillé au couteau, à la sauce tonnato maison (mayonnaise maison montée à l’huile d’olive, anchois, câpres, thon).</p>
+      </li>
+      <li class="article">
+        <div class="ligne">
+          <h3 class="nom">Beignets de courgettes &amp; aubergines, cervelle de canut<span class="icos"><span class="ico" role="img" aria-label="Gluten" title="Gluten"><svg viewBox="0 0 24 24"><g transform="rotate(22 12 13)"><path d="M12 23V5"/><path d="M12 8.5q-3.8-.6-4.4-5 3.9.4 4.4 5zM12 8.5q3.8-.6 4.4-5-3.9.4-4.4 5zM12 13q-3.8-.6-4.4-5 3.9.4 4.4 5zM12 13q3.8-.6 4.4-5-3.9.4-4.4 5zM12 17.5q-3.8-.6-4.4-5 3.9.4 4.4 5zM12 17.5q3.8-.6 4.4-5-3.9.4-4.4 5zM12 5q-1.6-2 0-4.3 1.6 2.3 0 4.3z"/></g></svg></span><span class="ico" role="img" aria-label="Lactose" title="Lactose"><svg viewBox="0 0 24 24"><path d="M9.3 2h5.4v3H9.3z"/><path d="M9.6 5c0 2-2.6 2.6-2.6 5.2v10.3c0 .8.7 1.5 1.5 1.5h7c.8 0 1.5-.7 1.5-1.5V10.2C17 7.6 14.4 7 14.4 5"/><path d="M7 12.5h10"/></svg></span></span></h3>
+          <span class="prix">13 €</span>
+        </div>
+        <p class="desc">Légumes en beignets dorés et croustillants, servis avec une cervelle de canut à la lyonnaise : faisselle, herbes fraîches et échalote.</p>
+      </li>
+      <li class="article">
+        <div class="ligne">
+          <h3 class="nom">Le Croque-monsieur<span class="icos"><span class="ico" role="img" aria-label="Gluten" title="Gluten"><svg viewBox="0 0 24 24"><g transform="rotate(22 12 13)"><path d="M12 23V5"/><path d="M12 8.5q-3.8-.6-4.4-5 3.9.4 4.4 5zM12 8.5q3.8-.6 4.4-5-3.9.4-4.4 5zM12 13q-3.8-.6-4.4-5 3.9.4 4.4 5zM12 13q3.8-.6 4.4-5-3.9.4-4.4 5zM12 17.5q-3.8-.6-4.4-5 3.9.4 4.4 5zM12 17.5q3.8-.6 4.4-5-3.9.4-4.4 5zM12 5q-1.6-2 0-4.3 1.6 2.3 0 4.3z"/></g></svg></span><span class="ico" role="img" aria-label="Lactose" title="Lactose"><svg viewBox="0 0 24 24"><path d="M9.3 2h5.4v3H9.3z"/><path d="M9.6 5c0 2-2.6 2.6-2.6 5.2v10.3c0 .8.7 1.5 1.5 1.5h7c.8 0 1.5-.7 1.5-1.5V10.2C17 7.6 14.4 7 14.4 5"/><path d="M7 12.5h10"/></svg></span><span class="ico" role="img" aria-label="Moutarde" title="Moutarde"><svg viewBox="0 0 24 24"><path d="M7.5 2.5h9v3.5h-9z"/><path d="M8 6c-1 .8-1.5 1.8-1.5 3v11.5c0 .8.7 1.5 1.5 1.5h8c.8 0 1.5-.7 1.5-1.5V9c0-1.2-.5-2.2-1.5-3"/><circle cx="10.5" cy="14" r="1"/><circle cx="13.5" cy="15.8" r="1"/><circle cx="11.3" cy="17.8" r="1"/></svg></span></span></h3>
+          <span class="prix">15 €</span>
+        </div>
+        <p class="desc">Pain de mie, jambon blanc, Cantal et emmental avec sa sauce Mornay.</p>
+      </li>
+      <li class="article">
+        <div class="ligne">
+          <h3 class="nom">Planche de charcuterie</h3>
+          <span class="prix">26 €</span>
+        </div>
+        <p class="desc">Charcuteries de la Maison Oliveras (Cecina de León, Lomito Ibérique, Jambon Ibérique Bellota) servies avec son pain.</p>
+      </li>
+      <li class="article">
+        <div class="ligne">
+          <h3 class="nom">Planche de fromage<span class="icos"><span class="ico" role="img" aria-label="Lactose" title="Lactose"><svg viewBox="0 0 24 24"><path d="M9.3 2h5.4v3H9.3z"/><path d="M9.6 5c0 2-2.6 2.6-2.6 5.2v10.3c0 .8.7 1.5 1.5 1.5h7c.8 0 1.5-.7 1.5-1.5V10.2C17 7.6 14.4 7 14.4 5"/><path d="M7 12.5h10"/></svg></span></span></h3>
+          <span class="prix">16 €</span>
+        </div>
+        <p class="desc">Fromages AOP du moment servis avec son pain.</p>
+      </li>
+      <li class="article">
+        <div class="ligne">
+          <h3 class="nom">Le tartinable du moment</h3>
+          <span class="prix">9 €</span>
+        </div>
+        <p class="desc">Recette qui change au fil des saisons, servi avec son pain.</p>
+      </li>
+      <li class="article">
+        <div class="ligne">
+          <h3 class="nom">La pièce du boucher à partager<span class="icos"><span class="ico" role="img" aria-label="Moutarde" title="Moutarde"><svg viewBox="0 0 24 24"><path d="M7.5 2.5h9v3.5h-9z"/><path d="M8 6c-1 .8-1.5 1.8-1.5 3v11.5c0 .8.7 1.5 1.5 1.5h8c.8 0 1.5-.7 1.5-1.5V9c0-1.2-.5-2.2-1.5-3"/><circle cx="10.5" cy="14" r="1"/><circle cx="13.5" cy="15.8" r="1"/><circle cx="11.3" cy="17.8" r="1"/></svg></span></span></h3>
+          <span class="prix">13 € <span class="sep">/</span> 100 g</span>
+        </div>
+        <p class="desc">Pièce de la Maison Le Sage, selon disponibilité accompagnée de pommes de terre grenaille et son jus corsé.</p>
+      </li>
+      <li class="article">
+        <div class="ligne">
+          <h3 class="nom">Mousse au chocolat<span class="icos"><span class="ico" role="img" aria-label="Œufs" title="Œufs"><svg viewBox="0 0 24 24"><path d="M12 2.5c-4 0-7 7-7 12 0 4.4 3 7 7 7s7-2.6 7-7c0-5-3-12-7-12z"/></svg></span><span class="ico" role="img" aria-label="Lactose" title="Lactose"><svg viewBox="0 0 24 24"><path d="M9.3 2h5.4v3H9.3z"/><path d="M9.6 5c0 2-2.6 2.6-2.6 5.2v10.3c0 .8.7 1.5 1.5 1.5h7c.8 0 1.5-.7 1.5-1.5V10.2C17 7.6 14.4 7 14.4 5"/><path d="M7 12.5h10"/></svg></span></span></h3>
+          <span class="prix">8 €</span>
+        </div>
+        <p class="desc">Chocolat noir de caractère accompagné de sa fleur de sel.</p>
+      </li>
+      </ul>
+    </section>
+    <footer class="legende">
+      <h2><span>Allergènes</span></h2>
+      <ul><li><span class="ico"><svg viewBox="0 0 24 24"><g transform="rotate(22 12 13)"><path d="M12 23V5"/><path d="M12 8.5q-3.8-.6-4.4-5 3.9.4 4.4 5zM12 8.5q3.8-.6 4.4-5-3.9.4-4.4 5zM12 13q-3.8-.6-4.4-5 3.9.4 4.4 5zM12 13q3.8-.6 4.4-5-3.9.4-4.4 5zM12 17.5q-3.8-.6-4.4-5 3.9.4 4.4 5zM12 17.5q3.8-.6 4.4-5-3.9.4-4.4 5zM12 5q-1.6-2 0-4.3 1.6 2.3 0 4.3z"/></g></svg></span>Gluten</li><li><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 2.5c-4 0-7 7-7 12 0 4.4 3 7 7 7s7-2.6 7-7c0-5-3-12-7-12z"/></svg></span>Œufs</li><li><span class="ico"><svg viewBox="0 0 24 24"><path d="M9.3 2h5.4v3H9.3z"/><path d="M9.6 5c0 2-2.6 2.6-2.6 5.2v10.3c0 .8.7 1.5 1.5 1.5h7c.8 0 1.5-.7 1.5-1.5V10.2C17 7.6 14.4 7 14.4 5"/><path d="M7 12.5h10"/></svg></span>Lactose</li><li><span class="ico"><svg viewBox="0 0 24 24"><path d="M7.5 2.5h9v3.5h-9z"/><path d="M8 6c-1 .8-1.5 1.8-1.5 3v11.5c0 .8.7 1.5 1.5 1.5h8c.8 0 1.5-.7 1.5-1.5V9c0-1.2-.5-2.2-1.5-3"/><circle cx="10.5" cy="14" r="1"/><circle cx="13.5" cy="15.8" r="1"/><circle cx="11.3" cy="17.8" r="1"/></svg></span>Moutarde</li><li><span class="ico"><svg viewBox="0 0 32 24"><path d="M3 12c4-7 13-8 19 0-6 8-15 7-19 0z"/><path d="M22 12l7-6-2 6 2 6z"/><circle cx="8" cy="11" r="1.1"/><path d="M11.5 7.5q2 4.5 0 9"/></svg></span>Poisson</li></ul>
+    </footer>
+  </main>
 </body>
 </html>
