@@ -21,8 +21,10 @@
 :root {
   --fond: #2a3244;          /* Pantone 19-4024 TCX « Dress Blues » */
   --fond-clair: #2a3244;
-  --or: #c29a55;          /* or patiné, équivalent écran du Pantone 871 C */
-  --or-trait: #b27e35;
+  --or: #d6b062;           /* or métallique (aplat : pictogrammes, repli) */
+  /* reflet métallique des textes dorés : clair en haut, ombre au milieu, éclat en bas */
+  --or-metal: linear-gradient(180deg, #f6e2a8 0%, #e2bd6d 38%, #b0802f 54%, #d9b062 72%, #f0d58f 100%);
+  --or-trait: #c49a4c;
   --texte: #f6f3ee;
 }
 
@@ -246,3 +248,20 @@ html, body {
     print-color-adjust: exact;
   }
 }
+
+/* ---------- Effet or métallique sur les textes dorés ---------- */
+.entete h1, .section, .nom, .prix, .legende h2 {
+  background-image: var(--or-metal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* à l’impression : aplat doré net (le dégradé laisse des liserés dans les PDF) */
+@media print {
+  .entete h1, .section, .nom, .prix, .legende h2 {
+    background-image: none;
+    -webkit-text-fill-color: var(--or);
+  }
+}
+/* les filets dorés prennent aussi un léger reflet horizontal */
+.feuille::before { border-image: linear-gradient(135deg, #e9c97f, #b0802f 30%, #e2bd6d 55%, #a87a2c 80%, #e9c97f) 1; }
