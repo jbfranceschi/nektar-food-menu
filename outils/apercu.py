@@ -26,6 +26,7 @@ def ouvrir(nav, **kw):
     pg = nav.new_page(**kw)
     pg.goto(url)
     pg.wait_for_selector(".feuille.prete")
+    pg.wait_for_timeout(400)  # laisse finir le fondu d’apparition (0,2 s)
     return pg
 
 

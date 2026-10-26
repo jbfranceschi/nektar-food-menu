@@ -21,8 +21,8 @@
 :root {
   --fond: #2a3244;          /* Pantone 19-4024 TCX « Dress Blues » */
   --fond-clair: #2a3244;
-  --or: #ffcd45;
-  --or-trait: #e4a31c;
+  --or: #c29a55;          /* or patiné, équivalent écran du Pantone 871 C */
+  --or-trait: #b27e35;
   --texte: #f6f3ee;
 }
 
