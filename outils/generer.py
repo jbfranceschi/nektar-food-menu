@@ -128,7 +128,7 @@ def page_html(donnees, prefixe=""):
     <main class="feuille" id="feuille">
       <header class="entete">
         <h1>{e(titre)}</h1>
-        <img class="logo" src="{prefixe}assets/logo-nektar.svg" alt="NEKTAR, café · bar à vin">
+        <img class="logo" src="{prefixe}assets/logo-nektar.svg" alt="NEKTAR, cave · bar à vin, Paris">
       </header>
       <div class="contenu" id="contenu">{sections}{note}
       </div>{legende}
