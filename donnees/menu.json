@@ -5,25 +5,39 @@
       "nom": "Crudo de la pêche du jour",
       "description": "Poisson cru tranché minute, selon l’arrivée de criée, vinaigrette aux agrumes, poivre Sarawak et autres épices, huile verte et son condiment kumquat.",
       "prix": "19 €",
-      "allergenes": ["poisson"]
+      "allergenes": [
+        "poisson"
+      ]
     },
     {
       "nom": "Tartare de veau, sauce tonnato",
       "description": "Veau de la Maison Lesage, taillé au couteau, à la sauce tonnato maison (mayonnaise maison montée à l’huile d’olive, anchois, câpres, thon).",
       "prix": "17 €",
-      "allergenes": ["moutarde", "oeufs", "poisson", "gluten"]
+      "allergenes": [
+        "moutarde",
+        "oeufs",
+        "poisson",
+        "gluten"
+      ]
     },
     {
       "nom": "Beignets de courgettes & aubergines, cervelle de canut",
       "description": "Légumes en beignets dorés et croustillants, servis avec une cervelle de canut à la lyonnaise : faisselle, herbes fraîches et échalote.",
       "prix": "13 €",
-      "allergenes": ["gluten", "lactose"]
+      "allergenes": [
+        "gluten",
+        "lactose"
+      ]
     },
     {
       "nom": "Le Croque-monsieur",
       "description": "Pain de mie, jambon blanc, Cantal et emmental avec sa sauce Mornay.",
       "prix": "15 €",
-      "allergenes": ["gluten", "lactose", "moutarde"]
+      "allergenes": [
+        "gluten",
+        "lactose",
+        "moutarde"
+      ]
     },
     {
       "nom": "Planche de charcuterie",
@@ -35,7 +49,9 @@
       "nom": "Planche de fromage",
       "description": "Fromages AOP du moment servis avec son pain.",
       "prix": "16 €",
-      "allergenes": ["lactose"]
+      "allergenes": [
+        "lactose"
+      ]
     },
     {
       "nom": "Le tartinable du moment",
@@ -47,13 +63,16 @@
       "nom": "La pièce du boucher à partager",
       "description": "Pièce de la Maison Le Sage, selon disponibilité accompagnée de pommes de terre grenaille et son jus corsé.",
       "prix": "13 € / 100 g",
-      "allergenes": ["moutarde"]
+      "allergenes": []
     },
     {
       "nom": "Mousse au chocolat",
       "description": "Chocolat noir de caractère accompagné de sa fleur de sel.",
       "prix": "8 €",
-      "allergenes": ["oeufs", "lactose"]
+      "allergenes": [
+        "oeufs",
+        "lactose"
+      ]
     }
   ]
 }
