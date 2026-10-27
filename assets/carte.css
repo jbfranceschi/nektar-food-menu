@@ -21,8 +21,8 @@
 :root {
   --fond: #2a3244;          /* Pantone 19-4024 TCX « Dress Blues » */
   --fond-clair: #2a3244;
-  --or: #ffcd45;
-  --or-trait: #e4a31c;
+  --or: #ddb547;           /* doré officiel NEKTAR */
+  --or-trait: #ddb547;
   --texte: #f6f3ee;
 }
 
